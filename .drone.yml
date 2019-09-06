@@ -8,6 +8,6 @@ steps:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   
 - name: docker-build
-  image: plugins/docker
+  image: docker:latest
   commands: 
-  - docker build -t sample-image  .  
+  - docker build -t sample-image  .
