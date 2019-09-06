@@ -7,8 +7,14 @@ steps:
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true findbugs:findbugs -B -V
 
+- name: sonar_analysis
+  image: maven:3-jdk-10  
+  commands:
+  - mvn install -DskipTests=true
+
 trigger:
   event:
     include:
     - pull_request
     - push
+      
