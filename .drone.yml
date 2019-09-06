@@ -8,4 +8,7 @@ steps:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true findbugs:findbugs -B -V
 
 trigger:
-  event: pull_request
+  event:
+    include:
+    - pull_request
+    - push
