@@ -5,9 +5,7 @@ steps:
 - name: test
   image: maven:3-jdk-10
   commands:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  
-- name: docker-build
-  image: docker:latest
-  commands: 
-  - docker build -t sample-image  .
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true findbugs:findbugs -B -V
+
+trigger:
+  event: pull_request
