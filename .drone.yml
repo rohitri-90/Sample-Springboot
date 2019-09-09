@@ -11,8 +11,9 @@ steps:
   image: maven:3-jdk-10  
   commands:
   - mvn install -DskipTests=true
-  trigger:
-  event:
-    include:
-    - pull_request
-  #  - push
+
+trigger:
+event:
+  include:
+  - pull_request
+#  - push
