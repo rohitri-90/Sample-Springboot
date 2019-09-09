@@ -13,7 +13,7 @@ steps:
   - mvn install -DskipTests=true
 
 trigger:
-event:
-  include:
-  - pull_request
+  event:
+    include:
+    - pull_request
 #  - push
